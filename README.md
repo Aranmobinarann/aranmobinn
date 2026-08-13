@@ -1,6 +1,8 @@
 # aranmobinn
-Aranmobin – See Through the Chain. DeFi Dashboard on Tron, Solana, Ethereum, Bitcoin &amp; TON.
+Aranmobin – See Through the Chain. DeFi Dashboard on Tron, Solana, Ethereum, Bitcoin & TON.
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+License: Apache-2.0 — see LICENSE
 
 # 👋 Hello, I'm Aranmobin
 
