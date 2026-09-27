@@ -1,0 +1,15 @@
+{
+  "files": [
+    ".gitignore",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES.md",
+    "package.json",
+    "tsconfig.json",
+    "src/**/*.ts",
+    "go.mod",
+    "cmd/**/*.go",
+    "internal/**/*.go"
+  ]
+}
