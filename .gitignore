@@ -1,15 +1,12 @@
-{
-  "files": [
-    ".gitignore",
-    "README.md",
-    "LICENSE",
-    "NOTICE",
-    "THIRD_PARTY_NOTICES.md",
-    "package.json",
-    "tsconfig.json",
-    "src/**/*.ts",
-    "go.mod",
-    "cmd/**/*.go",
-    "internal/**/*.go"
-  ]
-}
+# Ignore dependencies
+node_modules/
+
+# Ignore compiled output
+dist/
+
+# Ignore editor data
+.vscode/
+.DS_Store
+
+# Ignore environment files
+.env
