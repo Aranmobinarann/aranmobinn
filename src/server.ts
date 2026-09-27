@@ -19,7 +19,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import 'dotenv/config';
 import { config } from './config.js';
-import { buildDashboardSummary } from './mock-data.js';
+import { buildDashboardSummary } from './services/dashboard-service.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -34,24 +34,28 @@ app.get('/api/health', (_req, res) => {
     status: 'ok',
     service: config.appName,
     environment: config.environment,
-    version: '0.1.0'
+    version: '0.2.0'
   });
 });
 
-app.get('/api/chains', (_req, res) => {
-  res.json(buildDashboardSummary().portfolio.chains);
+app.get('/api/chains', async (_req, res) => {
+  const summary = await buildDashboardSummary();
+  res.json(summary.portfolio.chains);
 });
 
-app.get('/api/alerts', (_req, res) => {
-  res.json(buildDashboardSummary().alerts);
+app.get('/api/alerts', async (_req, res) => {
+  const summary = await buildDashboardSummary();
+  res.json(summary.alerts);
 });
 
-app.get('/api/portfolio', (_req, res) => {
-  res.json(buildDashboardSummary().portfolio);
+app.get('/api/portfolio', async (_req, res) => {
+  const summary = await buildDashboardSummary();
+  res.json(summary.portfolio);
 });
 
-app.get('/api/dashboard', (_req, res) => {
-  res.json(buildDashboardSummary());
+app.get('/api/dashboard', async (_req, res) => {
+  const summary = await buildDashboardSummary();
+  res.json(summary);
 });
 
 app.get('*', (_req, res) => {
@@ -60,4 +64,5 @@ app.get('*', (_req, res) => {
 
 app.listen(config.port, () => {
   console.log(`${config.appName} dashboard is running on http://localhost:${config.port}`);
+  console.log(`${config.appName} is fetching live data from blockchain RPC endpoints...`);
 });
