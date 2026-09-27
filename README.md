@@ -1,8 +1,6 @@
 # aranmobinn
 Aranmobin – See Through the Chain. DeFi Dashboard on Tron, Solana, Ethereum, Bitcoin & TON.
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-
-License: Apache-2.0 — see LICENSE
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 # 👋 Hello, I'm Aranmobin
 
@@ -22,7 +20,7 @@ My goal is to make decentralized finance **accessible, fast, and completely tran
 
 At the heart of my stack lies **Apache Zero2** – a lightweight middleware layer that enables:
 
-- Real-time data aggregation with sub‑second latency
+- Real-time data aggregation with sub-second latency
 - Seamless communication between multiple RPC nodes
 - Efficient caching and load balancing for high-throughput DeFi apps
 
@@ -54,8 +52,11 @@ I actively build and integrate with the most influential networks in crypto:
 
 ## 📜 License
 
-This project is licensed under the **Apache License, Version 2.0**.  
-See the [LICENSE](LICENSE) file for full details.
+Copyright 2026 Aranmobinarann.
+
+This project is licensed under the **Apache License, Version 2.0**. You may use, reproduce, and distribute it in accordance with the terms of that license. See the [LICENSE](LICENSE) file for the full license text and [NOTICE](NOTICE) for attribution information.
+
+If you distribute a modified version, please retain the required copyright, attribution, and license notices and clearly identify modified files as required by Apache-2.0.
 
 ---
 
