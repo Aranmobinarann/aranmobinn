@@ -1,72 +1,63 @@
-# aranmobinn
+# Aranmobinn
+
 Aranmobin – See Through the Chain. DeFi Dashboard on Tron, Solana, Ethereum, Bitcoin & TON.
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-# 👋 Hello, I'm Aranmobin
+## Overview
 
-**Aranmobin – See Through the Chain**  
-Building the future of DeFi with a transparent, multi-chain dashboard powered by Apache Zero2.
+This repository now includes a lightweight TypeScript dashboard prototype for a multi-chain decentralized finance portfolio. It exposes a local API and a small front-end interface that renders the portfolio summary, blockchain health, and alerts.
 
----
+## Features
 
-## 🚀 Core Mission
+- Dashboard summary API
+- Multi-chain portfolio view
+- Alert generation for slow RPC or strong yield signals
+- Static web frontend
+- Apache 2.0 license support
 
-I'm developing a high-performance DeFi portfolio tracker that unifies data across major blockchains.  
-My goal is to make decentralized finance **accessible, fast, and completely transparent** for everyone.
+## Quick start
 
----
+1. Install dependencies:
 
-## ⚙️ Apache Zero2 Integration
+   ```bash
+   npm install
+   ```
 
-At the heart of my stack lies **Apache Zero2** – a lightweight middleware layer that enables:
+2. Start the local dashboard in development mode:
 
-- Real-time data aggregation with sub-second latency
-- Seamless communication between multiple RPC nodes
-- Efficient caching and load balancing for high-throughput DeFi apps
+   ```bash
+   npm run dev
+   ```
 
----
+3. Open a browser to:
 
-## ⛓️ Multi-Chain Ecosystem
+   ```text
+   http://localhost:3000
+   ```
 
-I actively build and integrate with the most influential networks in crypto:
+4. Or build the project:
 
-| Blockchain | Focus Area |
-| :--- | :--- |
-| **Tron** | High-speed swaps, yield farms, and lending pools |
-| **Solana** | Ultra-low latency and scalable dApp infrastructure |
-| **Ethereum** | Smart contract development and core DeFi protocols |
-| **Bitcoin** | Digital asset valuation and cross-chain bridges |
-| **TON** | Decentralized applications within the Telegram ecosystem |
+   ```bash
+   npm run build
+   ```
 
----
+5. Start the production build:
 
-## 📊 Current Development Focus
+   ```bash
+   npm start
+   ```
 
-- ✅ Real-time balance & impermanent loss tracking  
-- ✅ Yield farming reward calculations  
-- ✅ Automated push alerts for price changes & liquidation risks  
-- ✅ Multi-chain wallet integration (Tron, Solana, EVM, BTC, TON)  
-- ✅ User-friendly dashboard with 15K+ daily active users
+## API endpoints
 
----
+- `GET /api/health`
+- `GET /api/portfolio`
+- `GET /api/chains`
+- `GET /api/alerts`
+- `GET /api/dashboard`
 
-## 📜 License
+## Notes
 
-Copyright 2026 Aranmobinarann.
+This is a demo scaffold for the project concept. Real blockchain RPC integration, wallet support, and protocol pricing logic can be added on top of this foundation.
 
-This project is licensed under the **Apache License, Version 2.0**. You may use, reproduce, and distribute it in accordance with the terms of that license. See the [LICENSE](LICENSE) file for the full license text and [NOTICE](NOTICE) for attribution information.
+## License
 
-For third-party dependency notices, see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-
-If you distribute a modified version, please retain the required copyright, attribution, and license notices and clearly identify modified files as required by Apache-2.0.
-
----
-
-## 🌐 Find Me Online
-
-- **GitHub:** [github.com/aranmobinarann](https://github.com/aranmobinarann)  
-- **Project:** Aranmobin (Official launch coming soon)
-
----
-
-⚡ *"Clear code, transparent chains, trustless future."*
+This project is licensed under the Apache License 2.0. See [LICENSE](LICENSE) for details.
