@@ -17,9 +17,12 @@
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import cors from 'cors';
 import 'dotenv/config';
 import { config } from './config.js';
+import { initializeDatabase } from './database.js';
 import { buildDashboardSummary } from './services/dashboard-service.js';
+import { verifyToken } from './auth.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -27,14 +30,24 @@ const __dirname = path.dirname(__filename);
 const publicDir = path.resolve(__dirname, '../public');
 
 app.use(express.json());
+app.use(cors());
 app.use(express.static(publicDir));
+
+const authMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const token = req.headers.authorization?.split(' ')[1];
+  if (!token) return res.status(401).json({ error: 'Unauthorized' });
+  const decoded = verifyToken(token);
+  if (!decoded) return res.status(401).json({ error: 'Invalid token' });
+  (req as any).userId = decoded.userId;
+  next();
+};
 
 app.get('/api/health', (_req, res) => {
   res.json({
     status: 'ok',
     service: config.appName,
     environment: config.environment,
-    version: '0.2.0'
+    version: '1.0.0'
   });
 });
 
@@ -62,7 +75,12 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(publicDir, 'index.html'));
 });
 
-app.listen(config.port, () => {
-  console.log(`${config.appName} dashboard is running on http://localhost:${config.port}`);
-  console.log(`${config.appName} is fetching live data from blockchain RPC endpoints...`);
-});
+async function start() {
+  await initializeDatabase();
+  app.listen(config.port, () => {
+    console.log(`${config.appName} is running on http://localhost:${config.port}`);
+    console.log(`Fetching live data from blockchain RPC endpoints...`);
+  });
+}
+
+start();

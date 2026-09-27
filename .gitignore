@@ -1,12 +1,6 @@
-# Ignore dependencies
 node_modules/
-
-# Ignore compiled output
 dist/
-
-# Ignore editor data
 .vscode/
 .DS_Store
-
-# Ignore environment files
 .env
+*.log

@@ -14,8 +14,30 @@
  * limitations under the License.
  */
 
-export const config = {
-  appName: process.env.APP_NAME ?? 'Aranmobinn',
-  environment: process.env.NODE_ENV ?? 'development',
-  port: Number(process.env.PORT ?? 3000)
+import type { Chain } from './types.js';
+
+export const rpcEndpoints: Record<Chain, string> = {
+  ETHEREUM: process.env.RPC_ETHEREUM ?? 'https://eth.public.zph.ch',
+  SOLANA: process.env.RPC_SOLANA ?? 'https://api.mainnet-beta.solana.com',
+  TRON: process.env.RPC_TRON ?? 'https://api.trongrid.io/jsonrpc',
+  BITCOIN: process.env.RPC_BITCOIN ?? 'https://blockstream.info/api',
+  TON: process.env.RPC_TON ?? 'https://toncenter.com/api/v2'
 };
+
+export const walletAddresses: Record<Chain, string> = {
+  ETHEREUM: process.env.WALLET_ETHEREUM ?? '0x742d35Cc6634C0532925a3b844Bc9e7595f42d1',
+  SOLANA: process.env.WALLET_SOLANA ?? 'SolmzZ8VqPQrpqrMh7MKPEQzRSN4jKGnbxGfJEZBBFR',
+  TRON: process.env.WALLET_TRON ?? 'TQCfAudKTHJNv5FkRYs6d6xjxpUUTjVSuG',
+  BITCOIN: process.env.WALLET_BITCOIN ?? '1A1z7agoat6Ft53BJjwzYXa8xVBDeba4Ce',
+  TON: process.env.WALLET_TON ?? 'UQAIVhXUUhA3M8M_YNdqBrJkLPPTWYPy_yiSDAOKG6tKxBPm'
+};
+
+export const databaseConfig = {
+  user: process.env.DB_USER ?? 'aranmobinn',
+  password: process.env.DB_PASSWORD ?? 'changeme',
+  host: process.env.DB_HOST ?? 'localhost',
+  port: Number(process.env.DB_PORT ?? 5432),
+  database: process.env.DB_NAME ?? 'aranmobinn'
+};
+
+export const jwtSecret = process.env.JWT_SECRET ?? 'your-secret-key-change-in-production';

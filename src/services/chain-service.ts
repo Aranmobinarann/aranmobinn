@@ -16,11 +16,9 @@
 
 import { JsonRpcProvider } from 'ethers';
 import type { Chain, ChainStatus } from './types.js';
-import { rpcEndpoints, walletAddresses } from './rpc-config.js';
+import { rpcEndpoints, walletAddresses } from './config.js';
 
 class ChainService {
-  private providers: Map<Chain, any> = new Map();
-
   async getEthereumBalance(chain: 'ETHEREUM'): Promise<ChainStatus> {
     const startTime = Date.now();
     try {
