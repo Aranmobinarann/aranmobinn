@@ -1,10 +1,20 @@
+Aranmobinn
+Copyright 2026 Aranmobinarann
+
 This product includes software developed by Aranmobinarann.
 
-Third-Party Attributions:
-- [Project/Library name] [version] — Copyright (c) [year] [owner] — License: [license]
-  (Brief notes about what part is used, if required.)
+Third-party dependencies
+------------------------
 
-Additional Notices:
-- (Add any required legal attributions or notices here.)
+No third-party dependency attributions are listed here yet. When this project
+bundles or redistributes third-party software, add each dependency's name,
+version, copyright holder, license, and any required attribution below. Do not
+add an attribution unless it has been verified from the dependency's license
+or official notice.
 
-For details on licensing, see the repository LICENSE (Apache-2.0).
+Additional notices
+------------------
+
+No additional third-party notices are currently recorded.
+
+For the applicable terms, see the repository LICENSE (Apache License, Version 2.0).
