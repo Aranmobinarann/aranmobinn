@@ -56,6 +56,8 @@ Copyright 2026 Aranmobinarann.
 
 This project is licensed under the **Apache License, Version 2.0**. You may use, reproduce, and distribute it in accordance with the terms of that license. See the [LICENSE](LICENSE) file for the full license text and [NOTICE](NOTICE) for attribution information.
 
+For third-party dependency notices, see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 If you distribute a modified version, please retain the required copyright, attribution, and license notices and clearly identify modified files as required by Apache-2.0.
 
 ---
